@@ -1,0 +1,71 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&display=swap');
+
+
+/* Variables root para fuentes */
+:root {
+  --fuente-titulo: 'Special Gothic Condensed One', sans-serif;
+  --fuente-texto: 'Roboto Slab', serif;
+}
+/* Fuentes */
+.titulo {
+  font-family: var(--fuente-titulo) !important;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Texto */
+.texto {
+  font-family: var(--fuente-texto) !important;
+}
+
+/* Botones */
+.boton-personalizado {
+  font-family: var(--fuente-titulo) !important;
+}
+
+/* Carrusel principal */
+.cr img {
+  height: 700px; 
+  object-fit: cover; 
+}
+
+/* Separación solo de las secciones internas */
+/* No afecta navbar ni carrusel principal */
+.section-separada {
+  margin-top: 4rem;
+}
+
+/* Mejoras para el último carrusel */
+#carouselElejirnos .carousel-inner {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#carouselElejirnos .carousel-item {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+#carouselElejirnos img {
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Control de Bootstrap */
+.nav-link, .dropdown-item {
+  font-family: var(--fuente-titulo) !important;
+}
+
+/* Opcional: estilizar headings globales */
+h1, h2, h3, h4, h5, h6, .fs-1, .fs-2, .fs-3, .fs-4 {
+  font-family: var(--fuente-titulo) !important;
+}
+
+/* Texto normal */
+p, li {
+  font-family: var(--fuente-texto) !important;
+}
