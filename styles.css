@@ -11,6 +11,93 @@
   --trescolor: #004688;
 
 }
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--doscolor); /* Pantalla blanca */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.preloader-logo {
+  width: 40%; /* Ajusta tamaño del logo */
+  height: auto;
+}
+
+/* Dot spinner de Uiverse */
+.dot-spinner {
+  --uib-size: 2.8rem;
+  --uib-speed: .9s;
+  --uib-color: var(--trescolor); /* Azul corporativo */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.dot-spinner__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.dot-spinner__dot::before {
+  content: '';
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  transform: scale(0);
+  opacity: 0.5;
+  animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(0, 70, 136, 0.3);
+}
+
+.dot-spinner__dot:nth-child(2) { transform: rotate(45deg); }
+.dot-spinner__dot:nth-child(2)::before { animation-delay: calc(var(--uib-speed) * -0.875); }
+.dot-spinner__dot:nth-child(3) { transform: rotate(90deg); }
+.dot-spinner__dot:nth-child(3)::before { animation-delay: calc(var(--uib-speed) * -0.75); }
+.dot-spinner__dot:nth-child(4) { transform: rotate(135deg); }
+.dot-spinner__dot:nth-child(4)::before { animation-delay: calc(var(--uib-speed) * -0.625); }
+.dot-spinner__dot:nth-child(5) { transform: rotate(180deg); }
+.dot-spinner__dot:nth-child(5)::before { animation-delay: calc(var(--uib-speed) * -0.5); }
+.dot-spinner__dot:nth-child(6) { transform: rotate(225deg); }
+.dot-spinner__dot:nth-child(6)::before { animation-delay: calc(var(--uib-speed) * -0.375); }
+.dot-spinner__dot:nth-child(7) { transform: rotate(270deg); }
+.dot-spinner__dot:nth-child(7)::before { animation-delay: calc(var(--uib-speed) * -0.25); }
+.dot-spinner__dot:nth-child(8) { transform: rotate(315deg); }
+.dot-spinner__dot:nth-child(8)::before { animation-delay: calc(var(--uib-speed) * -0.125); }
+
+@keyframes pulse0112 {
+  0%, 100% { transform: scale(0); opacity: 0.5; }
+  50% { transform: scale(1); opacity: 1; }
+}
+
+/* Ocultar preloader cuando la página cargue */
+body.loaded #preloader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
 .header-clearwater {
   background-color: var(--trescolor) !important;
   border-bottom: 4px solid #ffffff !important; /* Turquesa */
@@ -328,3 +415,81 @@ p, li {
   opacity: 0;
 }
 
+/* Sección Green & Clean a pantalla completa */
+.green-clean-full {
+  background-color: #73b44a; /* Verde corporativo */
+  background-image: linear-gradient(90deg, #73b44a 50%, #3098cc 50%);
+  color: #fff;
+}
+
+.img-green-clean {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.titulo-green-clean {
+  font-family: var(--fuente-titulo) !important;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.texto-green-clean {
+  font-family: var(--fuente-texto) !important;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.btn-green-clean {
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6em;
+  transition: all 0.2s;
+  border: none;
+  font-family: var(--fuente-titulo) !important;
+  font-weight: 500;
+  color: #3098cc !important; /* Azul corporativo */
+  background-color: #fff !important;
+}
+
+.btn-green-clean:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-green-clean:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-green-clean::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #fff;
+  transition: all 0.4s;
+}
+
+.btn-green-clean:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .green-clean-full {
+    background-image: none;
+    background-color: #73b44a;
+  }
+}
