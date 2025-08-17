@@ -118,33 +118,39 @@
       <div class="row justify-content-center">
 
         <div class="col-md-4 mb-4">
-<div class="card h-100 d-flex flex-column card-clear">
+                        <a href="#">
+<div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" data-bs-placement="top" title="Haz click para más info">
             <img src="imgs/carrousel2/pexels-pixabay-207227.jpg" class="card-img-top" alt="Servicio 1">
             <div class="card-body">
               <h5 class="card-title titulo">Limpieza Básica</h5>
               <p class="card-text texto">Servicio de limpieza estándar para mantener tu pileta impecable.</p>
             </div>
           </div>
+                    </a>
         </div>
 
         <div class="col-md-4 mb-4">
-<div class="card h-100 d-flex flex-column card-clear">
+            <a href="#">
+<div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" data-bs-placement="top" title="Haz click para más info">
             <img src="imgs/carrousel2/pexels-valeriya-965988.jpg" class="card-img-top" alt="Servicio 2">
             <div class="card-body">
               <h5 class="card-title titulo">Mantenimiento Completo</h5>
               <p class="card-text texto">Chequeo de filtros, limpieza profunda y control de PH.</p>
             </div>
           </div>
+          </a>
         </div>
 
         <div class="col-md-4 mb-4">
-<div class="card h-100 d-flex flex-column card-clear">
+                        <a href="">
+<div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" data-bs-placement="top" title="Haz click para más info">
             <img src="imgs/carrousel2/pexels-vlada-karpovich-7903142.jpg" class="card-img-top" alt="Servicio 3">
             <div class="card-body">
               <h5 class="card-title titulo">Limpieza Express</h5>
               <p class="card-text texto">Servicio rápido para emergencias o mantenimiento semanal.</p>
             </div>
           </div>
+                    </a>
         </div>
 
       </div>
@@ -311,7 +317,7 @@
       <div class="text-center mt-3">
         <small>&copy; 2025 Clear Water. Todos los derechos reservados.</small>
       </div>
-    </div>
+    </div> 
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -322,7 +328,37 @@
     setTimeout(() => {
       const preloader = document.getElementById('preloader');
       if(preloader) preloader.style.display = 'none';
-    }, 500); // espera que termine la transición
+    }, 2500); // espera que termine la transición
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.carousel').forEach(function(carousel) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX - 40) {
+        bootstrap.Carousel.getInstance(carousel).next();
+      }
+      if (touchEndX > touchStartX + 40) {
+        bootstrap.Carousel.getInstance(carousel).prev();
+      }
+    });
   });
 </script>
 

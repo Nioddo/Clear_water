@@ -12,6 +12,9 @@
 
 }
 
+a{
+  text-decoration: none !important;
+}
 /* Preloader */
 #preloader {
   position: fixed;
@@ -493,3 +496,15 @@ p, li {
     background-color: #73b44a;
   }
 }
+
+/* Tooltip personalizado */
+.tooltip-inner {
+  background-color: #000000ee !important;
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+
