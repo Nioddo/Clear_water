@@ -172,7 +172,7 @@
     e.preventDefault();
     const nombre = encodeURIComponent(nombreInput.value.trim());
     const direccion = encodeURIComponent(direccionInput.value.trim());
-    const mensaje = `!Hola!, soy ${nombre} y me gustaría solicitar el servicio de limpieza de fondo en la dirección:"${direccion}".`;
+    const mensaje = `!Hola!, soy ${nombre} y me gustaría solicitar el servicio de limpieza de fondo en la dirección: "${direccion}".`;
     window.open(`https://wa.me/5492914444431?text=${mensaje}`, '_blank');
   });
 </script>
