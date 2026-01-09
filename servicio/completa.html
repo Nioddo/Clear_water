@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Water</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="../imgs/logo/ClearWaterPiscinasLogoOriginal.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Pantalla de carga -->
+<div id="preloader">
+  <img src="../imgs/logo/ClearWaterPiscinasLogoOriginal.png" alt="Clear Water" class="preloader-logo">
+  <div class="dot-spinner">
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+  </div>
+</div>
+
+<!-- HEADER IDÉNTICO AL ORIGINAL -->
+<header>
+<nav class="navbar navbar-expand-lg fixed-top  header-clearwater">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html"><img src="../imgs/logo/ClearWater Piscinas Logo.svg" alt="Clear Water" class="logo-clearwater"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="navbar-nav ms-auto me-3">
+  <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="../index.html">Home</a></li>
+  <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="../servicios/index.html">Servicios</a></li>
+  <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="../precios/index.html">Precios</a></li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle fs-4" href="#" role="button" data-bs-toggle="dropdown">Mas</a>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a class="dropdown-item" href="../contacto/index.html">Contacto</a></li>
+      <li><a class="dropdown-item" href="../nosotros/index.html">Nosotros</a></li>
+      <li><a class="dropdown-item" href="../faq/index.html">FAQ</a></li>
+      <li><a class="dropdown-item" href="../como-trabajamos/index.html">Cómo Trabajamos</a></li>
+    </ul>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main class="main-content-background">
+  <div class="container-xl">
+    <div class="row g-5 align-items-center">
+      <!-- Lado izquierdo: carrusel -->
+      <div class="col-lg-6">
+        <div id="servicioCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner rounded-4">
+            <div class="carousel-item active"><img src="../imgs/carrousel2/pexels-pixabay-207227.jpg" class="d-block w-100" alt="Servicio 1"></div>
+            <div class="carousel-item"><img src="../imgs/carrousel2/pexels-valeriya-965988.jpg" class="d-block w-100" alt="Servicio 2"></div>
+            <div class="carousel-item"><img src="../imgs/carrousel2/pexels-vlada-karpovich-7903142.jpg" class="d-block w-100" alt="Servicio 3"></div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#servicioCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#servicioCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+        </div>
+      </div>
+
+      <!-- Lado derecho: info del servicio -->
+      <div class="col-lg-6">
+        <div class="servicio-info-card">
+          <h2 class="servicio-titulo-xl text-uppercase">LimpiezaS Completa</h2>
+          <p class="servicio-descripcion">Servicio completo de limpieza del fondo de la piscina, eliminando suciedad, hojas y sedimentos acumulados.</p>
+          <form id="solicitarServicioForm" class="mt-4 text-center">
+            <div class="mb-3"><input type="text" class="form-control servicio-input" id="nombre" placeholder="Nombre y Apellido" required></div>
+            <div class="mb-4"><input type="text" class="form-control servicio-input" id="direccion" placeholder="Dirección del servicio" required></div>
+            <button type="submit" class="btn-servicio-nuevo" disabled>Solicitar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de especificaciones y mapa -->
+    <section class="roomy-section mt-5 row align-items-stretch">
+      <div class="col-12 text-center"><h2 class="seccion-titulo-centro">Especificación</h2></div>
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="info-box">
+          <h6 class="minititulo text-center">Info importante</h6>
+          <p class="servicio-texto">
+            Aquí puedes agregar datos importantes sobre el servicio, condiciones, horarios y recomendaciones.<br><br>
+            ✅ Atención: lunes a sábado • 9:00 a 18:00<br>
+            ✅ Incluye traslado y productos de limpieza<br>
+            ✅ Tiempo estimado del servicio: 60–90 min
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-box">
+          <h6 class="minititulo text-center">Zona de cobertura</h6>
+          <iframe src="https://www.google.com/maps/d/embed?mid=1k3atRx1MtWevlSgxBZnZ0Q6Ewh-hViM&ehbc=2E312F" width="100%" style="border:0;" allowfullscreen loading="lazy" class="servicio-mapa"></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="bg-dark text-light pt-4 pb-3">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-4 mb-3 text-center text-md-start"><h5 class="titulo">Clear Water</h5><p class="texto">Servicio integral de limpieza y mantenimiento de piletas.</p></div>
+          <div class="col-md-4 mb-3 text-center"><h5 class="titulo">Redes Sociales</h5><a href="https://wa.me/5492914444431" class="text-light me-3"><i class="bi bi-whatsapp" style="font-size: 1.5rem;"></i></a><a href="https://www.instagram.com/clearwaterpiscinas_/?hl=es" class="text-light me-3"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a></div>
+          <div class="col-md-4 mb-3 text-center text-md-end"><h5 class="titulo">Contacto</h5><p class="texto">Email: contacto@clearwater.com</p><p class="texto">Tel: +54 9 291 444-4431</p></div>
+      </div>
+      <div class="text-center mt-3"><small>&copy; 2025 Clear Water. Todos los derechos reservados.</small></div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    setTimeout(() => {
+      const preloader = document.getElementById('preloader');
+      if(preloader) preloader.style.display = 'none';
+    }, 1500);
+  });
+  
+  const nombreInput = document.getElementById('nombre');
+  const direccionInput = document.getElementById('direccion');
+  const btnServicio = document.querySelector('.btn-servicio-nuevo');
+
+  // --- CÓDIGO NUEVO AÑADIDO AQUÍ ---
+  // VALIDACIÓN PARA EL CAMPO "NOMBRE Y APELLIDO" (SOLO LETRAS Y ESPACIOS)
+  nombreInput.addEventListener('input', function(event) {
+    // Usamos una expresión regular para eliminar cualquier caracter que NO sea una letra o un espacio.
+    event.target.value = event.target.value.replace(/[^a-zA-Z\s]/g, '');
+  });
+
+  // VALIDACIÓN PARA EL CAMPO "DIRECCIÓN" (PERMITE CARACTERES COMUNES)
+  direccionInput.addEventListener('input', function(event) {
+    // Esta expresión regular elimina cualquier caracter que NO sea letra, número, espacio o los símbolos ,.-#°
+    event.target.value = event.target.value.replace(/[^a-zA-Z0-9\s.,\-#°]/g, '');
+  });
+  // --- FIN DEL CÓDIGO NUEVO ---
+
+  function toggleButton() {
+    btnServicio.disabled = !(nombreInput.value.trim() && direccionInput.value.trim());
+  }
+
+  nombreInput.addEventListener('input', toggleButton);
+  direccionInput.addEventListener('input', toggleButton);
+
+  document.getElementById('solicitarServicioForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nombre = encodeURIComponent(nombreInput.value.trim());
+    const direccion = encodeURIComponent(direccionInput.value.trim());
+    const mensaje = `!Hola!, soy ${nombre} y me gustaría solicitar el servicio de limpieza de Completa en la dirección: "${direccion}".`;
+    window.open(`https://wa.me/5492914444431?text=${mensaje}`, '_blank');
+  });
+</script>
+
+</body>
+</html>

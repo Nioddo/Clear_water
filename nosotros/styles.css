@@ -1,0 +1,175 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&display=swap');
+
+
+/* Variables root para fuentes */
+:root {
+  --fuente-titulo: 'Special Gothic Condensed One', sans-serif;
+  --fuente-texto: 'Roboto Slab', serif;
+  --doscolor: #fafafa;
+  --trescolor: #004688;
+}
+
+/* ===================== ESTRUCTURA PRINCIPAL DEL BODY (AQUÍ ESTÁ LA CORRECCIÓN) ===================== */
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%; /* Asegura que el body ocupe al menos toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  background-color: #f0f2f5;
+}
+
+main {
+  flex-grow: 1; /* Permite que el contenido principal crezca para empujar el footer */
+}
+/* ===================== FIN DE LA CORRECCIÓN ===================== */
+
+
+a {
+  text-decoration: none !important;
+  color: var(--trescolor);
+}
+a:hover {
+  color: #002d57;
+}
+
+/* ===================== PRELOADER ===================== */
+#preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--doscolor); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; z-index: 9999; transition: opacity 0.5s ease; }
+.preloader-logo { width: 40%; height: auto; max-width: 200px;}
+.dot-spinner { --uib-size: 2.8rem; --uib-speed: .9s; --uib-color: var(--trescolor); position: relative; display: flex; align-items: center; justify-content: flex-start; height: var(--uib-size); width: var(--uib-size); }
+.dot-spinner__dot { position: absolute; top: 0; left: 0; display: flex; align-items: center; justify-content: flex-start; height: 100%; width: 100%; }
+.dot-spinner__dot::before { content: ''; height: 20%; width: 20%; border-radius: 50%; background-color: var(--uib-color); transform: scale(0); opacity: 0.5; animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite; box-shadow: 0 0 20px rgba(0, 70, 136, 0.3); }
+.dot-spinner__dot:nth-child(2) { transform: rotate(45deg); } .dot-spinner__dot:nth-child(2)::before { animation-delay: calc(var(--uib-speed) * -0.875); }
+.dot-spinner__dot:nth-child(3) { transform: rotate(90deg); } .dot-spinner__dot:nth-child(3)::before { animation-delay: calc(var(--uib-speed) * -0.75); }
+.dot-spinner__dot:nth-child(4) { transform: rotate(135deg); } .dot-spinner__dot:nth-child(4)::before { animation-delay: calc(var(--uib-speed) * -0.625); }
+.dot-spinner__dot:nth-child(5) { transform: rotate(180deg); } .dot-spinner__dot:nth-child(5)::before { animation-delay: calc(var(--uib-speed) * -0.5); }
+.dot-spinner__dot:nth-child(6) { transform: rotate(225deg); } .dot-spinner__dot:nth-child(6)::before { animation-delay: calc(var(--uib-speed) * -0.375); }
+.dot-spinner__dot:nth-child(7) { transform: rotate(270deg); } .dot-spinner__dot:nth-child(7)::before { animation-delay: calc(var(--uib-speed) * -0.25); }
+.dot-spinner__dot:nth-child(8) { transform: rotate(315deg); } .dot-spinner__dot:nth-child(8)::before { animation-delay: calc(var(--uib-speed) * -0.125); }
+@keyframes pulse0112 { 0%, 100% { transform: scale(0); opacity: 0.5; } 50% { transform: scale(1); opacity: 1; } }
+body.loaded #preloader { opacity: 0; pointer-events: none; }
+
+/* ===================== HEADER Y NAVBAR ===================== */
+.header-clearwater { background-color: var(--trescolor) !important; border-bottom: 4px solid #ffffff !important; box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important; }
+.navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important; }
+.logo-clearwater { width: 150px !important; height: 60px !important; object-fit: cover !important; object-position: center center !important; }
+.link-navbar-clear { font-size: 18px; color: #e1e1e1 !important; font-family: var(--fuente-titulo) !important; font-weight: 800 !important; cursor: pointer; position: relative; border: none; background: none; text-transform: uppercase; transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1); text-decoration: none !important; }
+.link-navbar-clear:hover, .link-navbar-clear:focus { color: #fff !important; }
+.link-navbar-clear::after { content: ""; position: absolute; bottom: -2px; left: 50%; width: 0%; height: 2px; background-color: #fff; transition: width 400ms cubic-bezier(0.25, 0.8, 0.25, 1), left 400ms cubic-bezier(0.25, 0.8, 0.25, 1); }
+.link-navbar-clear:hover::after, .link-navbar-clear:focus::after { width: 100%; left: 0; }
+.btn-clearwater { position: relative; font-size: 17px; text-transform: uppercase; padding: 0.7em 1.8em; cursor: pointer; border-radius: 6em; transition: all 0.2s; border: none; font-family: var(--fuente-titulo) !important; font-weight: 500; color: #004688 !important; background-color: #fff !important; }
+.btn-clearwater:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+.btn-clearwater:active { transform: translateY(-1px); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+@media (max-width: 992px) { .btn-clearwater { padding: 0.5em 1em !important; font-size: 15px !important; } }
+.btn-clearwater::after { content: ""; display: inline-block; height: 100%; width: 100%; border-radius: 100px; position: absolute; top: 0; left: 0; z-index: -1; background-color: #fff; transition: all 0.4s; }
+.btn-clearwater:hover::after { transform: scaleX(1.4) scaleY(1.6); opacity: 0; }
+.nav-link, .dropdown-item { font-family: var(--fuente-titulo) !important; }
+.navbar-nav .nav-link { color: #fff !important; font-weight: 800 !important; }
+
+/* ===================== ESTILOS GLOBALES DE PÁGINAS ESENCIALES ===================== */
+.page-container { background-color: white; border-radius: 1rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); margin: 3rem auto; padding: 2.5rem; }
+.page-title { color: var(--trescolor); font-size: clamp(2.5rem, 5vw, 3.5rem); }
+h1, h2, h3, h4, h5, h6, .fs-1, .fs-2, .fs-3, .fs-4, .titulo { font-family: var(--fuente-titulo) !important; color: var(--trescolor);}
+p, li, .texto, .list-group-item, .blockquote-footer, .form-control, .accordion-body { font-family: var(--fuente-texto) !important; color: #444; }
+main .list-group-item { background-color: transparent; border-color: #eee; }
+
+/* ===================== ESTILOS DE INDEX.HTML (PÁGINA PRINCIPAL) ===================== */
+.titulo-con-lineas { display: flex; align-items: center; justify-content: center; gap: 2rem; margin: 5rem 0; }
+.titulo-con-lineas p.titulo { margin: 0; line-height: 1; white-space: nowrap; }
+.linea { flex-grow: 1; max-width: 40%; border-top: 15px double var(--trescolor); height: 0; align-self: center; }
+@media (max-width: 768px) { .linea { max-width: 25%; } }
+@media (max-width: 480px) { .linea { max-width: 15%; } }
+.cr img { height: 700px; object-fit: cover; }
+.carousel-caption .texto { color: var(--doscolor); }
+.section-separada { margin-top: 4rem; }
+.card-clear { background-color: var(--trescolor) !important; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important; border-radius: 1rem !important; transition: transform 0.3s ease, box-shadow 0.3s ease !important; }
+.card-clear:hover { transform: translateY(-8px) !important; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important; }
+.card-clear img { border-top-left-radius: 1rem !important; border-top-right-radius: 1rem !important; }
+.card-clear .card-title, .card-clear .card-text { color: #fff !important; }
+#carouselElejirnos .carousel-inner { border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+#carouselElejirnos .carousel-item { padding: 2rem; background-color: #f8f9fa; }
+#carouselElejirnos img { border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+#carouselElejirnos .titulo, #carouselElejirnos .texto {color: #444;}
+.green-clean-full { background-color: #73b44a; background-image: linear-gradient(90deg, #73b44a 50%, #3098cc 50%); color: #fff; padding: 3rem 0;}
+.img-green-clean { border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.titulo-green-clean, .texto-green-clean, .texto-green-clean strong { font-family: var(--fuente-titulo) !important; color: #fff !important; }
+.btn-green-clean { position: relative; font-size: 17px; text-transform: uppercase; padding: 1em 2.5em; display: inline-block; cursor: pointer; border-radius: 6em; transition: all 0.2s; border: none; font-family: var(--fuente-titulo) !important; font-weight: 500; color: #3098cc !important; background-color: #fff !important; }
+.btn-green-clean:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+.tooltip-inner { background-color: #000000ee !important; color: #fff !important; font-size: 0.9rem; font-weight: 600; padding: 6px 12px; border-radius: 8px; }
+
+/* ===================== BOTÓN DE SERVICIO (General) ===================== */
+.btn-servicio { position: relative; font-size: 17px; text-transform: uppercase; text-decoration: none; padding: 1em 2.5em; display: inline-block; cursor: pointer; border-radius: 6em; transition: all 0.2s; border: none; font-family: var(--fuente-titulo) !important; font-weight: 500; color: var(--doscolor) !important; background-color: var(--trescolor) !important; }
+.btn-servicio:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+.btn-servicio::after { content: ""; display: inline-block; height: 100%; width: 100%; border-radius: 100px; position: absolute; top: 0; left: 0; z-index: -1; background-color: var(--trescolor); transition: all 0.4s; }
+.btn-servicio:hover::after { transform: scaleX(1.4) scaleY(1.6); opacity: 0; }
+
+/* ===================== PÁGINA SERVICIOS (CATÁLOGO) ===================== */
+.service-catalog-card { display: flex; background-color: #f8f9fa; border-radius: 15px; overflow: hidden; height: 100%; border: 1px solid #eee; transition: all 0.3s ease; }
+.service-catalog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 70, 136, 0.1); }
+.service-catalog-card img { width: 40%; object-fit: cover; min-height: 250px; }
+.service-details { padding: 1.5rem; width: 60%; display: flex; flex-direction: column; }
+.service-details p { font-size: 0.95rem; color: #555; flex-grow: 1; }
+.service-details ul { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+.service-details ul li { font-size: 0.9rem; margin-bottom: 0.25rem; }
+.service-details ul li i { color: var(--trescolor); margin-right: 8px; }
+.btn-servicio-card { display: inline-block; background-color: var(--trescolor); color: white !important; padding: 0.6em 1.5em; border-radius: 50px; text-transform: uppercase; font-family: var(--fuente-titulo); font-weight: 500; text-align: center; transition: all 0.2s; border: 2px solid var(--trescolor); }
+.btn-servicio-card:hover { background-color: #fff; color: var(--trescolor) !important; }
+@media (max-width: 768px) { .service-catalog-card { flex-direction: column; } .service-catalog-card img, .service-details { width: 100%; } }
+
+/* ===================== PÁGINA PRECIOS ===================== */
+.price-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.price-item { background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 1.5rem; }
+.price-item-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed #ddd; padding-bottom: 1rem; margin-bottom: 1rem; }
+.price-item-header .titulo { margin: 0; font-size: 1.5rem; }
+.price-tag { font-size: 1.8rem; font-weight: bold; color: var(--trescolor); }
+.price-item-body p { margin: 0; font-size: 1rem; }
+
+/* ===================== PÁGINA NOSOTROS ===================== */
+.philosophy-box { background: #f8f9fa; padding: 2rem; border-radius: 15px; height: 100%; border-bottom: 4px solid var(--trescolor); transition: all .3s ease; }
+.philosophy-box:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+.philosophy-box i { font-size: 3rem; color: var(--trescolor); }
+
+/* ===================== PÁGINA CONTACTO ===================== */
+.form-container, .contact-info { background-color: #f8f9fa; border-radius: 1rem; height: 100%; padding: 2rem; }
+.contact-info i { font-size: 1.5rem; color: var(--trescolor); vertical-align: middle; }
+.contact-info li, .contact-info a { font-family: var(--fuente-texto); font-size: 1.1rem; }
+.contact-info a { color: #333; }
+.contact-info a:hover { color: var(--trescolor); }
+
+
+
+/* ===================== PÁGINA COMO-TRABAJAMOS ===================== */
+.info-box { background: #f8f9fa; padding: 2rem; border-radius: 15px; height: 100%; transition: all .3s ease; }
+.info-box:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+.step-number { font-size: 3rem; font-weight: bold; color: var(--trescolor); line-height: 1; }
+
+/* ===================== FOOTER (IDÉNTICO EN TODAS LAS PÁGINAS) ===================== */
+footer {
+    background-color: #212529;
+    color: #f8f9fa;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+footer .titulo {
+    color: #ffffff;
+}
+footer .texto {
+    color: rgba(255, 255, 255, 0.7);
+}
+footer a {
+    color: #f8f9fa;
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #ffffff;
+}
+footer .bi {
+    transition: transform 0.3s ease;
+}
+footer .bi:hover {
+    transform: scale(1.2);
+}

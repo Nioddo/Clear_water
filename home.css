@@ -2,27 +2,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&display=swap');
 
-
-/* Variables root para fuentes */
+/* Variables root para fuentes y colores */
 :root {
   --fuente-titulo: 'Special Gothic Condensed One', sans-serif;
   --fuente-texto: 'Roboto Slab', serif;
   --doscolor: #fafafa;
   --trescolor: #004688;
-
 }
 
-a{
+/* --- ESTILOS GLOBALES --- */
+a {
   text-decoration: none !important;
 }
-/* Preloader */
+
+h1, h2, h3, h4, h5, h6, .fs-1, .fs-2, .fs-3, .fs-4 {
+  font-family: var(--fuente-titulo) !important;
+}
+
+p, li {
+  font-family: var(--fuente-texto) !important;
+}
+
+/* --- PRELOADER --- */
 #preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--doscolor); /* Pantalla blanca */
+  background-color: var(--doscolor);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,15 +41,20 @@ a{
 }
 
 .preloader-logo {
-  width: 40%; /* Ajusta tamaño del logo */
+  width: 40%;
   height: auto;
 }
 
-/* Dot spinner de Uiverse */
+body.loaded #preloader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Dot spinner */
 .dot-spinner {
   --uib-size: 2.8rem;
   --uib-speed: .9s;
-  --uib-color: var(--trescolor); /* Azul corporativo */
+  --uib-color: var(--trescolor);
   position: relative;
   display: flex;
   align-items: center;
@@ -93,17 +106,10 @@ a{
   50% { transform: scale(1); opacity: 1; }
 }
 
-/* Ocultar preloader cuando la página cargue */
-body.loaded #preloader {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-
+/* --- HEADER / NAVBAR --- */
 .header-clearwater {
   background-color: var(--trescolor) !important;
-  border-bottom: 4px solid #ffffff !important; /* Turquesa */
+  border-bottom: 4px solid #ffffff !important;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
 }
 
@@ -111,17 +117,16 @@ body.loaded #preloader {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
-
 .logo-clearwater {
-  width: 150px !important;        /* Tamaño más grande */
-  height: 60px !important;        /* Altura fija para forzar recorte */
-  object-fit: cover !important;   /* Hace zoom y recorta si es necesario */
-  object-position: center center !important; /* Centra el logo al recortar */
+  width: 150px !important;
+  height: 60px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
 }
 
 .link-navbar-clear {
   font-size: 18px;
-  color: #e1e1e1 !important;
+  color: #ffffff !important;       /* Blanco puro siempre */
   font-family: var(--fuente-titulo) !important;
   font-weight: 800 !important;
   cursor: pointer;
@@ -129,13 +134,14 @@ body.loaded #preloader {
   border: none;
   background: none;
   text-transform: uppercase;
-  transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: opacity 0.3s ease;   /* Transición de opacidad, no de color */
   text-decoration: none !important;
 }
 
 .link-navbar-clear:hover,
 .link-navbar-clear:focus {
-  color: #fff !important;
+  color: #ffffff !important;       /* Sigue siendo blanco */
+  opacity: 0.8;                    /* Solo baja un poco el brillo */
 }
 
 .link-navbar-clear::after {
@@ -145,10 +151,8 @@ body.loaded #preloader {
   left: 50%;
   width: 0%;
   height: 2px;
-
   background-color: #fff;
-  transition: width 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
-              left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: width 400ms cubic-bezier(0.25, 0.8, 0.25, 1), left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .link-navbar-clear:hover::after,
@@ -157,6 +161,7 @@ body.loaded #preloader {
   left: 0;
 }
 
+/* Botones Navbar */
 .btn-clearwater {
   position: relative;
   font-size: 17px;
@@ -181,6 +186,7 @@ body.loaded #preloader {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
 @media (max-width: 992px) {
   .btn-clearwater {
     padding: 0.5em 1em !important;
@@ -207,7 +213,7 @@ body.loaded #preloader {
   opacity: 0;
 }
 
-
+/* --- TÍTULOS Y SECCIONES --- */
 .titulo-con-lineas {
   display: flex;
   align-items: center;   
@@ -232,15 +238,10 @@ body.loaded #preloader {
 }
 
 @media (max-width: 768px) {
-  .linea {
-    max-width: 25%;
-  }
+  .linea { max-width: 25%; }
 }
-
 @media (max-width: 480px) {
-  .linea {
-    max-width: 15%;
-  }
+  .linea { max-width: 15%; }
 }
 
 .titulonav {
@@ -254,21 +255,47 @@ body.loaded #preloader {
   color: var(--doscolor);
 }
 
-.boton-personalizado {
-  font-family: var(--fuente-titulo) !important;
-  background-color: var(--unocolor) !important;
+.section-separada {
+  margin-top: 4rem;
 }
 
-
+/* --- CARRUSEL PRINCIPAL --- */
 .cr img {
   height: 700px; 
   object-fit: cover; 
 }
 
-.section-separada {
-  margin-top: 4rem;
+/* --- CARDS GENERALES Y CARDS DE SERVICIOS (Fix) --- */
+.card-clear {
+  background-color: var(--trescolor) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 1rem !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
+.card-clear:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-clear img {
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+}
+
+/* FIX: Altura fija para evitar deformación en carrusel */
+.card-clear .card-img-top {
+  height: 250px !important;
+  object-fit: cover !important;
+  width: 100%;
+}
+
+.card-clear .card-title,
+.carousel-clear .titulo {
+  color: #fff !important;
+}
+
+/* --- CARRUSEL "POR QUÉ ELEGIRNOS" --- */
 #carouselElejirnos .carousel-inner {
   border-radius: 1rem;
   overflow: hidden;
@@ -285,47 +312,9 @@ body.loaded #preloader {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.nav-link, .dropdown-item {
-  font-family: var(--fuente-titulo) !important;
-}
-.navbar-nav .nav-link {
-  color: #fff !important; /* Blanco sólido */
-    font-weight: 800 !important;
-
-}
-
-
-h1, h2, h3, h4, h5, h6, .fs-1, .fs-2, .fs-3, .fs-4 {
-  font-family: var(--fuente-titulo) !important;
-}
-
-p, li {
-  font-family: var(--fuente-texto) !important;
-}
-.card-clear {
-  background-color: var(--trescolor) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 1rem !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.card-clear:hover {
-  transform: translateY(-8px) !important;  /* Se acerca a la pantalla */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important; /* Sombra más profunda */
-}
-
-.card-clear img {
-  border-top-left-radius: 1rem !important;
-  border-top-right-radius: 1rem !important;
-}
-.card-clear .card-title,
-.carousel-clear .titulo {
-  color: #fff !important;
-}
-
-
+/* Clases específicas carrusel clear */
 .carousel-clear .carousel-item {
-  background-color: var(--trescolor) !important;  /* Celeste muy claro sólido */
+  background-color: var(--trescolor) !important;
   padding: 2rem !important;
   border-radius: 1rem !important;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1) !important;
@@ -337,14 +326,13 @@ p, li {
 
 .carousel-clear .carousel-control-prev,
 .carousel-clear .carousel-control-next {
-  width: auto !important; /* Dejamos que se acomode al contenido */
-  transform: translateX(-50px) !important; /* Izquierda */
+  width: auto !important;
+  transform: translateX(-50px) !important;
 }
 
 .carousel-clear .carousel-control-next {
-  transform: translateX(50px) !important; /* Derecha */
+  transform: translateX(50px) !important;
 }
-
 
 .carousel-clear .carousel-control-prev-icon,
 .carousel-clear .carousel-control-next-icon {
@@ -358,20 +346,14 @@ p, li {
 @media (max-width: 768px) {
   .carousel-clear .carousel-control-prev,
   .carousel-clear .carousel-control-next {
-    top: 90% !important;  /* Las llevamos abajo de la imagen */
+    top: 90% !important;
     transform: translateY(0) !important;
-
   }
-
-  .carousel-clear .carousel-control-prev {
-    left: 30% !important;
-  }
-
-  .carousel-clear .carousel-control-next {
-    right: 30% !important;
-  }
+  .carousel-clear .carousel-control-prev { left: 30% !important; }
+  .carousel-clear .carousel-control-next { right: 30% !important; }
 }
 
+/* --- BOTÓN SERVICIO --- */
 .btn-servicio {
   position: relative;
   font-size: 17px;
@@ -418,9 +400,9 @@ p, li {
   opacity: 0;
 }
 
-/* Sección Green & Clean a pantalla completa */
+/* --- SECTION GREEN & CLEAN --- */
 .green-clean-full {
-  background-color: #73b44a; /* Verde corporativo */
+  background-color: #73b44a;
   background-image: linear-gradient(90deg, #73b44a 50%, #3098cc 50%);
   color: #fff;
 }
@@ -457,7 +439,7 @@ p, li {
   border: none;
   font-family: var(--fuente-titulo) !important;
   font-weight: 500;
-  color: #3098cc !important; /* Azul corporativo */
+  color: #3098cc !important;
   background-color: #fff !important;
 }
 
@@ -497,7 +479,7 @@ p, li {
   }
 }
 
-/* Tooltip personalizado */
+/* --- TOOLTIPS --- */
 .tooltip-inner {
   background-color: #000000ee !important;
   color: #fff !important;
@@ -507,4 +489,85 @@ p, li {
   border-radius: 8px;
 }
 
+/* --- NUEVO CARRUSEL DE SERVICIOS (Responsive) --- */
+/* Aplica estilos a ambas versiones: Desktop (#carouselServicios) y Móvil (#carouselServiciosMobile) */
+#carouselServicios, 
+#carouselServiciosMobile {
+    padding: 0 40px;
+}
 
+#carouselServicios .carousel-control-prev,
+#carouselServicios .carousel-control-next,
+#carouselServiciosMobile .carousel-control-prev,
+#carouselServiciosMobile .carousel-control-next {
+    width: 50px;
+    opacity: 1;
+}
+
+#carouselServicios .carousel-control-prev-icon,
+#carouselServicios .carousel-control-next-icon,
+#carouselServiciosMobile .carousel-control-prev-icon,
+#carouselServiciosMobile .carousel-control-next-icon {
+    background-color: #004688 !important;
+    background-size: 50% !important;
+    border-radius: 50% !important;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Posicionamiento Desktop */
+#carouselServicios .carousel-control-prev { left: -10px; }
+#carouselServicios .carousel-control-next { right: -10px; }
+
+/* Posicionamiento Mobile */
+#carouselServiciosMobile .carousel-control-prev { left: -5px; }
+#carouselServiciosMobile .carousel-control-next { right: -5px; }
+
+/* Ajustes menores para móvil */
+@media (max-width: 768px) {
+    #carouselServiciosMobile { padding: 0; }
+}
+
+/* --- FIX BOTÓN DROPDOWN (Mas) --- */
+.link-dropdown-clear {
+  font-size: 1.5rem !important;
+  color: #ffffff !important;       /* Blanco puro siempre */
+  font-family: var(--fuente-titulo) !important;
+  font-weight: 800 !important;
+  text-transform: none !important; /* "Mas" sin forzar mayúsculas */
+  border: none;
+  background: none;
+  padding-top: 0.1rem;
+  transition: opacity 0.3s ease;
+}
+
+.link-dropdown-clear:hover,
+.link-dropdown-clear:focus,
+.link-dropdown-clear.show {
+  color: #ffffff !important;       /* Sigue siendo blanco al abrir */
+  opacity: 0.8;
+}
+
+/* --- ESTILOS OPCIONES DROPDOWN --- */
+.dropdown-menu {
+  border-radius: 1rem !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+  overflow: hidden; /* Para respetar los bordes redondeados */
+  padding: 0.5rem 0 !important;
+}
+
+.dropdown-item {
+  font-family: var(--fuente-titulo) !important; /* La misma fuente de los headers */
+  font-size: 1.3rem !important; /* Tamaño legible y consistente */
+  color: #333 !important;
+  padding: 0.7rem 1.5rem !important;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--trescolor) !important; /* Azul corporativo al pasar el mouse */
+  color: #fff !important;
+  padding-left: 2rem !important; /* Pequeño efecto de desplazamiento */
+}

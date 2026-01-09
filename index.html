@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clear Water</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css">
   <link rel="icon" href="imgs/logo/ClearWaterPiscinasLogoOriginal.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -38,20 +38,20 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto me-3">
-        <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="all pages/servicios.html">Servicios</a></li>
-        <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="all pages/precios.html">Precios</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fs-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mas</a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="all pages/contacto.html">Contacto</a></li>
-            <li><a class="dropdown-item" href="all pages/nosotros.html">Nosotros</a></li>
-            <li><a class="dropdown-item" href="faq/faq.html">FAQ</a></li>
-            <li><a class="dropdown-item" href="all pages/como-trabajamos.html">Cómo Trabajamos</a></li>
-          </ul>
-        </li>
-      </ul>
+<ul class="navbar-nav ms-auto me-3">
+  <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="../index.html">Home</a></li>
+  <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="../servicios/index.html">Servicios</a></li>
+  <li class="nav-item"><a class="nav-link fs-4 link-navbar-clear" href="../precios/index.html">Precios</a></li>
+  <li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle link-dropdown-clear" href="#" role="button" data-bs-toggle="dropdown">Mas</a>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a class="dropdown-item" href="../contacto/index.html">Contacto</a></li>
+      <li><a class="dropdown-item" href="../nosotros/index.html">Nosotros</a></li>
+      <li><a class="dropdown-item" href="../faq/index.html">FAQ</a></li>
+      <li><a class="dropdown-item" href="../como-trabajamos/index.html">Cómo Trabajamos</a></li>
+    </ul>
+  </li>
+</ul>
       <div class="d-flex gap-2 flex-wrap">
         <button class="btn-clearwater">Registrarse</button>
         <button class="btn-clearwater">Iniciar sesión</button>
@@ -103,48 +103,198 @@
   <span class="linea"></span>
 </div>
 
-    <div class="container section-separada">
-      <div class="row justify-content-center">
-
-        <div class="col-md-4 mb-4">
-                        <a href="servicio/index2.html">
-<div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" data-bs-placement="top" title="Haz click para más info">
-            <img src="imgs/carrousel2/pexels-pixabay-207227.jpg" class="card-img-top" alt="Servicio 1">
-            <div class="card-body">
-              <h5 class="card-title titulo">Limpieza Básica</h5>
-              <p class="card-text texto">Servicio de limpieza estándar para mantener tu pileta impecable.</p>
-            </div>
+<div class="container section-separada">
+  
+  <div id="carouselServicios" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <a href="servicio/basica.html">
+              <div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" title="Ver detalle">
+                <img src="imgs/carrousel2/pexels-pixabay-207227.jpg" class="card-img-top" alt="Limpieza Básica">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Limpieza Básica</h5>
+                  <p class="card-text texto">Servicio de limpieza estándar para mantener tu pileta impecable.</p>
+                </div>
+              </div>
+            </a>
           </div>
-                    </a>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <a href="servicio/index2.html">
-<div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" data-bs-placement="top" title="Haz click para más info">
-            <img src="imgs/carrousel2/pexels-valeriya-965988.jpg" class="card-img-top" alt="Servicio 2">
-            <div class="card-body">
-              <h5 class="card-title titulo">Mantenimiento Completo</h5>
-              <p class="card-text texto">Chequeo de filtros, limpieza profunda y control de PH.</p>
-            </div>
+          <div class="col-md-4 mb-4">
+            <a href="servicio/completa.html">
+              <div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" title="Ver detalle">
+                <img src="imgs/carrousel2/pexels-valeriya-965988.jpg" class="card-img-top" alt="Mantenimiento Completo">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Mantenimiento Completo</h5>
+                  <p class="card-text texto">Chequeo de filtros, limpieza profunda y control de PH.</p>
+                </div>
+              </div>
+            </a>
           </div>
-          </a>
-        </div>
-
-        <div class="col-md-4 mb-4">
-                        <a href="servicio/index2.html">
-<div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" data-bs-placement="top" title="Haz click para más info">
-            <img src="imgs/carrousel2/pexels-vlada-karpovich-7903142.jpg" class="card-img-top" alt="Servicio 3">
-            <div class="card-body">
-              <h5 class="card-title titulo">Limpieza Express</h5>
-              <p class="card-text texto">Servicio rápido para emergencias o mantenimiento semanal.</p>
-            </div>
+          <div class="col-md-4 mb-4">
+            <a href="servicio/express.html">
+              <div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" title="Ver detalle">
+                <img src="imgs/carrousel2/pexels-vlada-karpovich-7903142.jpg" class="card-img-top" alt="Limpieza Express">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Limpieza Express</h5>
+                  <p class="card-text texto">Servicio rápido para emergencias o mantenimiento semanal.</p>
+                </div>
+              </div>
+            </a>
           </div>
-                    </a>
         </div>
+      </div>
 
+      <div class="carousel-item">
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <a href="servicio/recuperacion.html">
+              <div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" title="Ver detalle">
+                <img src="imgs/logo/logo_green&clean.jpg" class="card-img-top" alt="Recuperación">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Recuperación Agua</h5>
+                  <p class="card-text texto">Tratamiento de shock para recuperar piscinas con agua verde.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-4">
+            <a href="servicio/basica.html">
+              <div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" title="Ver detalle">
+                <img src="imgs/carrousel2/pexels-pixabay-207227.jpg" class="card-img-top" alt="Pack Mensual">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Pack Mensual</h5>
+                  <p class="card-text texto">Suscripción mensual para olvidarte del mantenimiento.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 mb-4">
+            <a href="servicio/completa.html">
+              <div class="card h-100 d-flex flex-column card-clear" data-bs-toggle="tooltip" title="Ver detalle">
+                <img src="imgs/carrousel2/pexels-valeriya-965988.jpg" class="card-img-top" alt="Asesoría">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Asesoría Técnica</h5>
+                  <p class="card-text texto">Visita técnica para evaluar reparaciones o mejoras.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicios" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselServicios" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
 
+  <div id="carouselServiciosMobile" class="carousel slide d-block d-md-none" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <div class="p-2">
+            <a href="servicio/basica.html">
+              <div class="card h-100 d-flex flex-column card-clear">
+                <img src="imgs/carrousel2/pexels-pixabay-207227.jpg" class="card-img-top" alt="Limpieza Básica">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Limpieza Básica</h5>
+                  <p class="card-text texto">Servicio de limpieza estándar para mantener tu pileta impecable.</p>
+                </div>
+              </div>
+            </a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="p-2">
+            <a href="servicio/completa.html">
+              <div class="card h-100 d-flex flex-column card-clear">
+                <img src="imgs/carrousel2/pexels-valeriya-965988.jpg" class="card-img-top" alt="Mantenimiento Completo">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Mantenimiento Completo</h5>
+                  <p class="card-text texto">Chequeo de filtros, limpieza profunda y control de PH.</p>
+                </div>
+              </div>
+            </a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="p-2">
+            <a href="servicio/express.html">
+              <div class="card h-100 d-flex flex-column card-clear">
+                <img src="imgs/carrousel2/pexels-vlada-karpovich-7903142.jpg" class="card-img-top" alt="Limpieza Express">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Limpieza Express</h5>
+                  <p class="card-text texto">Servicio rápido para emergencias o mantenimiento semanal.</p>
+                </div>
+              </div>
+            </a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="p-2">
+            <a href="servicio/recuperacion.html">
+              <div class="card h-100 d-flex flex-column card-clear">
+                <img src="imgs/logo/logo_green&clean.jpg" class="card-img-top" alt="Recuperación">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Recuperación Agua</h5>
+                  <p class="card-text texto">Tratamiento de shock para recuperar piscinas con agua verde.</p>
+                </div>
+              </div>
+            </a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="p-2">
+            <a href="servicio/basica.html">
+              <div class="card h-100 d-flex flex-column card-clear">
+                <img src="imgs/carrousel2/pexels-pixabay-207227.jpg" class="card-img-top" alt="Pack Mensual">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Pack Mensual</h5>
+                  <p class="card-text texto">Suscripción mensual para olvidarte del mantenimiento.</p>
+                </div>
+              </div>
+            </a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="p-2">
+            <a href="servicio/completa.html">
+              <div class="card h-100 d-flex flex-column card-clear">
+                <img src="imgs/carrousel2/pexels-valeriya-965988.jpg" class="card-img-top" alt="Asesoría">
+                <div class="card-body">
+                  <h5 class="card-title titulo">Asesoría Técnica</h5>
+                  <p class="card-text texto">Visita técnica para evaluar reparaciones o mejoras.</p>
+                </div>
+              </div>
+            </a>
+        </div>
+      </div>
+
+    </div>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselServiciosMobile" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselServiciosMobile" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+</div>
 <div class="titulo-con-lineas">
   <span class="linea"></span>
   <p class="fs-1 text-center mt-3 mb-4 titulo section-separada h2-lineas">Zona de Cobertura</p>
