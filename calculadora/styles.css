@@ -1,6 +1,6 @@
 /* --- ESTILOS ESPECÍFICOS: ASISTENTE DE PRECIOS --- */
 
-/* Tarjetas de Selección (Paso 1) */
+/* Tarjetas de Selección */
 .card-seleccion {
     cursor: pointer;
     transition: all 0.3s ease;
@@ -94,12 +94,13 @@
 .resultado-box .box-productos p,
 .resultado-box .box-productos i,
 .resultado-box .box-productos strong {
-    color: #ffffff !important; /* Fuerza blanco sobre el fondo azul */
+    color: #ffffff !important;
 }
 
 /* Estilos de la Caja de Productos (Azul) */
 .box-productos {
     background-color: var(--trescolor);
+    color: #ffffff;
     border-radius: 0.8rem;
     padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -109,6 +110,10 @@
 .box-productos ul li {
     border-bottom: 1px solid rgba(255,255,255,0.2) !important;
     padding: 0.5rem 0;
+}
+
+.box-productos ul li:last-child {
+    border-bottom: none !important;
 }
 
 /* Alerta de cálculo (Azul) */
